@@ -10,6 +10,16 @@
  *  day - день місяця.
  */
 function getDateDetails(date) {
+
+  if (typeof date.getTime !== 'function') {
+    return "Помилка: вхідне значення має бути об'єктом Date";
+  } else {
+    return {
+      'year': date.getFullYear(),
+      'month': date.getMonth(),
+      'day': date.getDate(),
+    }
+  }
   // Перевірка, чи є вхідне значення об'єктом Date,це можно зробити перевіривши чи є date.getTime по типу функція .
   // Якщо date не є об'єктом Date, повертаємо рядок
   // "Помилка: вхідне значення має бути об'єктом Date"
